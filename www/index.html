@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+    
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/mdb.min.css">
+    <link rel="stylesheet" type="text/css" href="css/lib.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    
+    <link rel="stylesheet" type="text/css" href="css/font/entypo.css">
+
+
+    <title>TaxiPel</title>
+</head>
+
+<body class=" OpenSansLight">
+
+
+
+    <!-- THE MAP -->
+    <div id="map"></div>
+
+
+    <!-- Toolbar -->
+    <div class="toolbar flex justify-center ">
+
+        <div class="content flex justify-between align-center shadow-2">
+
+            <div class="menu" id="menu" onclick="toggleDrawer()">
+                <i class="icon-menu"></i>
+            </div>
+
+            <div class="md-form flex align-center" style="margin:0; font-size:.9em">
+                <!-- <i class="icon-search" style="margin:0 10px 0 0px"></i> -->
+                <input  type="text" 
+                style="margin:0;padding:0 0 0"
+                id="searchBox" class="form-control" placeholder="Ou allez vous?">
+                
+            </div>
+
+            <div class="style">
+                <i class="icon-map"></i>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- Floating -->
+    <div class="position ">
+        <div class=" flex align-center justify-center white shadow-2" onclick="relocate()">
+            <img src="img/position.png" width="28px" height="28px">
+        </div>
+    </div>
+
+
+    <!-- Drawer -->
+    <div class="drawer">
+
+        <div class="sheet" onclick="hideDrawer()"></div>
+
+        <div class="content shadow-2">
+
+            <div class="header cover">
+
+
+
+                <div class="header-content flex column justify-between">
+
+                    <div class="header-image cover"></div>
+
+                    <div>
+
+                        <div class="name">
+                            Grace lungu
+                        </div>
+
+                        <div class="phone">256 70 69 73 278</div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="items">
+                    <a class="item" href="pages/profil.html">
+                        <i class="icon-user"></i> <span>Profil</span>
+                    </a>
+                    <a class="item">
+                        <i class="icon-cog"></i> <span>Parametre</span>
+                    </a>
+                    <a class="item">
+                        <i class="icon-info"></i> <span>A propos</span>
+                    </a>
+                    <a class="item">
+                        <i class="icon-logout"></i> <span>Deconnexion</span>
+                    </a>
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class="destination">
+
+
+
+    </div>
+
+
+
+    <!-- Request -->
+    <div class="request flex justify-center align-center">
+
+        <div class="content ">
+
+            <div class="destination shadow-3">
+                <i class="icon-location" style="margin: 0 15px 0 0"></i>
+                <span id="destination"></span>
+            </div>
+
+            <div class="details flex column justify-center align-between">
+
+                <div class="distance flex justify-between align-center ">
+                    <div>Distance</div>
+                    <div>Prix</div>
+                </div>
+
+                <div class="price flex justify-between align-center OpenSansEBold">                    
+                    <div class="h5 " id="distance"></div>
+                    <div class="h5 ">2 500 fc</div>
+                </div>        
+
+
+            </div>
+
+            <div class="actions flex justify-between align-center">
+                <button type="button" class="btn btn-sm btn-outline-primary waves-effect">
+                    Annuler    
+                </button>
+
+                <div type="button" 
+                     class="flex justify-center align-center btn-primary btn btn-sm  waves-effect"> 
+                    <div class="car contain"></div>    
+                    <span>Appler un taxi</span>
+                </div>
+            
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+
+
+    <!-- AlertDialog -->
+    <div class="alertDialog flex column align-center justify-center">
+
+        <div class="content">
+
+            <div class="title">Confirm code</div>
+
+            <div class="message"></div>
+
+            <div class="input">
+                <div class="md-form input-form">
+                    <input type="number" id="input" class="form-control " placeholder="">
+                    <label for="form1" id="label" class="">Code</label>
+                </div>
+            </div>
+
+            <div class="actions flex justify-end align-center">
+                <div class="btn-cancel text-primary">Annuler</div>
+                <div class="btn-ok text-primary">Okay</div>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- Progress bar -->
+    <div class="progress-default flex align-center justify-center transition">
+
+        <div class="content flex align-center justify-center shadow-1 flex justify-center align-center">
+
+
+            <!--Circle loader-->
+            <div class="spin" style="display:block"></div>
+
+
+            <div class="message ">
+                Loading
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    
+
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script> 
+    <script type="text/javascript" src="js/mdb.min.js"></script>    
+    <!-- Bootstrap tooltips -->
+    <script type="text/javascript" src="js/popper.min.js"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/5.0.4/firebase.js"></script>
+    <script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyB4Tc7A28rWIv4vBS1X_78fPvimUutu4_w",
+    authDomain: "taxipel-42b74.firebaseapp.com",
+    databaseURL: "https://taxipel-42b74.firebaseio.com",
+    projectId: "taxipel-42b74",
+    storageBucket: "taxipel-42b74.appspot.com",
+    messagingSenderId: "413254732042"
+};
+firebase.initializeApp(config);
+</script>
+
+<!-- LIBJS -->
+<script type="text/javascript" src="js/lib.js"></script>
+
+<!-- Google map API -->
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDJbQTxUEuEhoe9Dlufw7vLA8CsQC9-NaQ&libraries=places&callback=initMap"
+async defer></script>
+
+<script type="text/javascript" src="js/map.js"></script>
+
+
+<script type="text/javascript" src="js/main.js"></script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+    
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../css/mdb.min.css">
+    <link rel="stylesheet" type="text/css" href="../css/lib.css">
+    <link rel="stylesheet" type="text/css" href="../css/index.css">
+    
+    <link rel="stylesheet" type="text/css" href="../css/font/entypo.css">
+
+
+    <title>TaxiPel</title>
+</head>
+
+<body class=" OpenSansLight">
+
+
+    <div class=" bottom flex column justify-between align-center">
+
+        <div class="icon contain"></div>
+           
+
+        <div class="form">
+
+            
+
+            <div class="md-form input-form">
+                <input type="text" id="name" class="form-control text-black" placeholder="">
+                <label for="name" class="text-black">Nom complet</label>
+            </div>
+
+            <div class="md-form input-form">
+                <input type="text" id="email" class="form-control text-black" placeholder="">
+                <label for="email" class="text-black">Email</label>
+            </div>
+
+            <div class="md-form input-form">
+                <input type="number" id="phone" class="form-control text-black" placeholder="">
+                <label for="phone" class="text-black">Telephone</label>
+            </div>
+
+            <div class="md-form input-form">
+                <input type="password" id="password" class="form-control text-black" placeholder="">
+                <label for="password" class="text-black">Mot de passe</label>
+            </div>
+
+            <div class="md-form input-form">
+                <input type="password" id="password2" class="form-control text-black" placeholder="">
+                <label for="password2" class="text-black">Confirmer</label>
+            </div>
+
+
+
+            <div id="signin"
+                 class="waves-effect waves-light btn btn-simple" 
+                 style="font-style:bold;min-width:246px;"
+                 onclick="signup()"> Inscription</div>
+
+            <div class="sample ">
+                As tu un compte? 
+                <a href="login.html" 
+                class="text-simple uppercase"
+                style="padding-left:5px; font-size:1.1em;">
+                Connexion
+            </a>
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<!-- AlertDialog -->
+<div class="alertDialog flex column align-center justify-center">
+
+    <div class="content">
+
+        <div class="title">Confirm code</div>
+
+        <div class="message"></div>
+
+        <div class="input">
+            <div class="md-form input-form">
+                <input type="number" id="input" class="form-control " placeholder="">
+                <label for="form1" id="label" class="">Code</label>
+            </div>
+        </div>
+
+        <div class="actions flex justify-end align-center">
+            <div class="btn-cancel text-primary">Annuler</div>
+            <div class="btn-ok text-primary">Okay</div>
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- Progress bar -->
+<div class="progress-default flex align-center justify-center transition">
+
+    <div class="content flex align-center justify-center shadow-1">
+
+
+    <!--Circle loader-->
+    <div class="spin" style="display:block"></div>
+        
+
+  <div class="message ">
+    Loading
+  </div>
+
+</div>
+
+</div>
+
+
+
+<script src="https://www.gstatic.com/firebasejs/5.0.4/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyB4Tc7A28rWIv4vBS1X_78fPvimUutu4_w",
+    authDomain: "taxipel-42b74.firebaseapp.com",
+    databaseURL: "https://taxipel-42b74.firebaseio.com",
+    projectId: "taxipel-42b74",
+    storageBucket: "taxipel-42b74.appspot.com",
+    messagingSenderId: "413254732042"
+  };
+  firebase.initializeApp(config);
+</script>
+
+<script type="text/javascript" src="../cordova.js"></script>
+<script type="text/javascript" src="../js/jquery.min.js"></script>
+<script type="text/javascript" src="../js/bootstrap.min.js"></script> 
+<script type="text/javascript" src="../js/mdb.min.js"></script>    
+<!-- Bootstrap tooltips -->
+<script type="text/javascript" src="../js/popper.min.js"></script>
+<script type="text/javascript" src="../js/lib.js"></script>
+<script type="text/javascript" src="../js/index.js"></script>
+
+
+</body>
+
+</html>
